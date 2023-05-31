@@ -1,0 +1,15 @@
+<div class="card">
+  <div class = "card-header">
+    <span class="text-danger h5" th:text = "${!req.isHandled()?'(*Новая)':'' }"></span>
+    <span class = "h5">Заявка от <strong th:text = "${req.getUserName()}"></strong></span>
+  </div>
+  <div class="card-body">
+    <span class="h5" >Курс :</span>
+    <span class = "h5" style="color: gray"><strong th:text = "${req.getCourseName()}"></strong></span>
+
+    <p class="card-text mt-2" th:text = "${req.getCommentary()}"></p>
+    <b><span th:text = " 'Тел: ' + ${req.getPhone()}"></span></b>
+    <a th:href="@{'/details/' + ${req.getId()}}" style="margin-left: 7px">Подробнее</a>
+
+  </div>
+</div>
